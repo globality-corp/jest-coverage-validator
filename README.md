@@ -31,4 +31,4 @@ validate(fail, pass);
 ```
 
 - `fail` is called with a list of failed thresholds.
-- `pass` is called with `true` if no thresholds fail.
+- `pass` is called with `true` if no thresholds fail. Optional.
