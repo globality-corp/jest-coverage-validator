@@ -14,7 +14,7 @@ Simple API:
 
 ```
 // ci-coverage-validate.js
-const validate = require('jest-coverage-validator');
+const validate = require('jest-coverage-validator').validate;
 
 function fail (failures) {
     global.console.error('Code coverage does not meet minimum threshold.');
