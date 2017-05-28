@@ -1,0 +1,21 @@
+machine:
+  # This makes use of a cache for reuse between builds
+  environment:
+    PATH: "${PATH}:${HOME}/jest-coverage-validator/node_modules/.bin"
+  pre:
+    - mkdir ~/.yarn-cache
+  node:
+    version: 6.9.5
+
+dependencies:
+  cache_directories:
+    - ~/.yarn-cache
+  override:
+    - curl -u$JFROG_AUTH https://globality.jfrog.io/globality/api/npm/auth > ~/.npmrc
+    - echo "registry=https://globality.jfrog.io/globality/api/npm/npm" >> ~/.npmrc
+    - yarn
+
+test:
+  override:
+    - yarn test
+    - yarn lint

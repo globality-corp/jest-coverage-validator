@@ -1,0 +1,41 @@
+{
+    "name": "jest-coverage-validator",
+    "version": "0.1.0",
+    "description": "Jest coverage thresholds validator",
+    "main": "dist/index.js",
+    "repository": "https://github.com/globality-corp/jest-coverage-validator",
+    "scripts": {
+        "build": "babel src --out-dir dist",
+        "lint": "eslint .",
+        "test": "jest src",
+        "prepublish": "npm run build"
+    },
+    "author": "Avi Zurel",
+    "license": "MIT",
+    "dependencies": {
+        "jest-cli": "^20.0.3",
+        "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-core": "^6.24.1",
+        "babel-eslint": "^7.2.3",
+        "babel-jest": "^20.0.3",
+        "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-plugin-transform-class-constructor-call": "^6.24.1",
+        "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+        "babel-plugin-transform-es2015-parameters": "^6.24.1",
+        "babel-plugin-transform-flow-strip-types": "^6.22.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-plugin-transform-strict-mode": "^6.24.1",
+        "babel-preset-env": "^1.5.1",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "eslint": "^3.19.0",
+        "eslint-config-airbnb-base": "^11.2.0",
+        "eslint-plugin-import": "^2.2.0",
+        "jest": "^20.0.3",
+        "regenerator-runtime": "^0.10.5"
+    }
+}
