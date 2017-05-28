@@ -1,6 +1,6 @@
 {
     "name": "jest-coverage-validator",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "Jest coverage thresholds validator",
     "main": "dist/index.js",
     "repository": "https://github.com/globality-corp/jest-coverage-validator",
