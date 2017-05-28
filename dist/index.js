@@ -3,7 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = validate;
+exports.getThresholds = getThresholds;
+exports.splitResults = splitResults;
+exports.getLastLines = getLastLines;
+exports.matchLine = matchLine;
+exports.findFailures = findFailures;
+exports.validate = validate;
 
 var _child_process = require('child_process');
 
@@ -59,8 +64,8 @@ function findFailures() {
 }
 
 function validate() {
-    var pass = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Function;
-    var fail = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Function;
+    var fail = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Function;
+    var pass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Function;
 
     var config = (0, _child_process.spawnSync)(commands.base, commands.showConfig).stderr.toString();
     var results = (0, _child_process.spawnSync)(commands.base, commands.coverage).stderr.toString();
