@@ -3,6 +3,8 @@ Validates Jest test coverage thresholds to be sure your coverage doesn't decreas
 
 Use this during CI or other build processes.
 
+Use it alongside something like [jest-coverage-ratchet](https://www.npmjs.com/package/jest-coverage-ratchet).
+
 Pass in a `fail` function to:
 - Fail a build
 - Send a Slack message
