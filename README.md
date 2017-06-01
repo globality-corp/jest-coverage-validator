@@ -25,7 +25,7 @@ Args:
 
 
 ```
-\\ circle.yml
+// circle.yml
 ...
 dependencies:
   cache_directories:
