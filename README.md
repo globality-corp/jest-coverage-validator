@@ -19,7 +19,7 @@ Pass in a `fail` function to `validate` to:
 - Send a Slack message
 - Etc.
 
-
+Args:
 - `fail` is called with a list of failed thresholds.
 - `pass` is called with `true` if no thresholds fail. Optional.
 
