@@ -17,7 +17,7 @@ var _lodash = require('lodash');
 
 var commands = exports.commands = {
     base: 'jest',
-    coverage: ['--coverage', '--maxWorkers 4', '--json'],
+    coverage: ['--coverage', '--json'],
     showConfig: ['--showConfig', '--json']
 };
 
