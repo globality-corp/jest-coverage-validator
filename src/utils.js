@@ -1,15 +1,9 @@
 import { spawnSync } from 'child_process';
-import {
-    compact,
-    findIndex,
-    get,
-    partial,
-    takeRight,
-} from 'lodash';
+import { compact, findIndex, get, partial, takeRight } from 'lodash';
 
 export const commands = {
     base: 'jest',
-    coverage: ['--coverage', '--json'],
+    coverage: ['--coverage --maxWorkers 4', '--json'],
     showConfig: ['--showConfig', '--json'],
 };
 
@@ -33,12 +27,14 @@ export function matchLine(str = '', line = '') {
 }
 
 export function findFailures(thresholds = [], lines = []) {
-    return thresholds.map((threshold) => {
-        const matchString = `${HEAD_STRING} ${threshold}`;
-        const appliedMatchLine = partial(matchLine, matchString);
-        const index = findIndex(lines, appliedMatchLine);
-        return index > -1 ? { threshold, failure: lines[index] } : false;
-    }).filter(failure => failure);
+    return thresholds
+        .map((threshold) => {
+            const matchString = `${HEAD_STRING} ${threshold}`;
+            const appliedMatchLine = partial(matchLine, matchString);
+            const index = findIndex(lines, appliedMatchLine);
+            return index > -1 ? { threshold, failure: lines[index] } : false;
+        })
+        .filter(failure => failure);
 }
 
 export function getStderr(base, command) {
