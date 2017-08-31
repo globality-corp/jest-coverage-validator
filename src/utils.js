@@ -3,7 +3,7 @@ import { compact, findIndex, get, partial, takeRight } from 'lodash';
 
 export const commands = {
     base: 'jest',
-    coverage: ['--coverage --maxWorkers 4', '--json'],
+    coverage: ['--coverage', '--maxWorkers 4', '--json'],
     showConfig: ['--showConfig', '--json'],
 };
 
